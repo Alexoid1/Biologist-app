@@ -1,2 +1,45 @@
 @import "bootstrap/scss/bootstrap";
 
+body {
+    margin: auto;
+    max-width: 1700px;
+    min-width: 1500px;
+}
+.container-fluid {
+   
+    
+}
+
+.colum {
+    width: 18%;
+    background: rgb(33,50,70);
+}
+
+.nav-menu ul {
+    color: rgb(85,105,126);
+    list-style: none;
+}
+
+.nav-menu ul li {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(85,105,126);
+    line-height: 50px;
+
+}
+
+.nav-menu ul li:hover {
+    color:white;
+}
+
+.square {
+    width:50px;
+    height: 50px;
+    background: white;
+}
