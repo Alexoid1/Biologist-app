@@ -27,6 +27,7 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 
 gem 'paperclip', '~> 6.1'
 
+gem 'bootstrap_form', '~> 4.5'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
