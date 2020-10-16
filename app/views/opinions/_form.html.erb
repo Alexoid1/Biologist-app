@@ -1,22 +1,9 @@
-<%= form_with(model: opinion, local: true) do |form| %>
-  <% if opinion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
 
-      <ul>
-        <% opinion.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :opinion %>
-    <%= form.text_area :opinion %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for(@opinion) do |form| %>
+  
+  <%= form.label :content %>
+  <%= form.text_field :opinion, id: :post_content, class: 'form-control', placeholder: 'Add New Post' %>
+  <%= display_errors(@opinion) %>
+  <%= form.submit 'Save', class: 'btn btn-primary' %>
 <% end %>

@@ -15,15 +15,15 @@ body {
     background: rgb(33,50,70);
 }
 
-.nav-menu ul {
-    color: rgb(85,105,126);
+.nav-menu ul {   
     list-style: none;
 }
 
-.nav-menu ul li {
+.nav-menu ul li{
     margin-top: 30px;
     font-weight: bold;
     font-size: 18px;
+    color: rgb(85,105,126);
 }
 
 .name {
@@ -31,7 +31,6 @@ body {
     font-size: 18px;
     color: rgb(85,105,126);
     line-height: 50px;
-
 }
 
 .nav-menu ul li:hover {
@@ -43,3 +42,30 @@ body {
     height: 50px;
     background: white;
 }
+
+.img-header {
+    padding:20px;
+    background: rgb(27, 44, 63);
+}
+.follow {
+    overflow: hidden;
+    margin: auto;
+}
+.borders {
+    border:1px solid rgb(39, 56, 48);
+    width: 50%;
+    background: rgb(27, 44, 63);
+}
+
+.number {
+    font-weight: bold;
+    font-size: 23px;
+    color: rgb(106, 130, 157);
+    
+}
+ .fol {
+    
+    font-size: 18px;
+    color: rgb(85,105,126);
+ }
+

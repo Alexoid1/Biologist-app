@@ -1,0 +1,22 @@
+
+ <div class='col-8'>
+    <%= render 'form' %>
+
+
+ 
+
+  
+     <% @opinions.each do |opinion| %>
+        <div>
+         <p><%= opinion.opinion %></p>
+         <p><%= link_to 'Show', opinion %></p>
+         <p><%= link_to 'Edit', edit_opinion_path(opinion) %></p>
+         <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+       </div>>
+     <% end %>
+  
+ 
+
+
+ <%= link_to 'New Opinion', new_opinion_path %>
+</div>

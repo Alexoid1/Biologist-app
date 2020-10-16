@@ -5,6 +5,7 @@ class OpinionsController < ApplicationController
   # GET /opinions.json
   def index
     @opinions = Opinion.all
+    @opinion = Opinion.new
   end
 
   # GET /opinions/1
@@ -28,7 +29,7 @@ class OpinionsController < ApplicationController
 
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to @opinion, notice: 'Opinion was successfully created.' }
+        format.html { redirect_to opinions_path, notice: 'Opinion was successfully created.' }
         format.json { render :show, status: :created, location: @opinion }
       else
         format.html { render :new }
