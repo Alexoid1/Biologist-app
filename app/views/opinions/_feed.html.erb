@@ -1,22 +1,28 @@
 
- <div class='col-8'>
-    <%= render 'form' %>
+ <div class='col-8 feed mx-auto'>
+  <%= render 'form' %>
 
 
  
 
-  
+  <div class='box'> 
+     <p class='n-posts'>NUMBER OF</p>
+     <hr>
      <% @opinions.each do |opinion| %>
-        <div>
-         <p><%= opinion.opinion %></p>
-         <p><%= link_to 'Show', opinion %></p>
-         <p><%= link_to 'Edit', edit_opinion_path(opinion) %></p>
-         <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-       </div>>
+        <div class='row'>
+          <div class='square'>
+          </div>
+          <div class='box2'>
+          
+          <p><%= opinion.opinion %></p>
+          
+          <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      </div> 
      <% end %>
-  
+  </div>
  
 
 
- <%= link_to 'New Opinion', new_opinion_path %>
+
 </div>
