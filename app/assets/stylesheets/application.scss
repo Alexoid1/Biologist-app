@@ -28,6 +28,13 @@ body {
     font-weight: bold;
     font-size: 14px;
     color: rgb(85,105,126);
+
+    .menu-anchor {
+      color: rgb(85,105,126);
+    }
+    .menu-anchor:hover {
+      color: white;
+    }
    }
     
   .nav-menu ul li:hover {
@@ -50,6 +57,7 @@ body {
       height: 50px;
       background: grey;
       margin-left:25px;
+      overflow: hidden;
     }
   }   
 
@@ -147,6 +155,7 @@ body {
       background: grey;
       margin-left:55px;
     }
+
     
 
   }

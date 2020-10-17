@@ -4,16 +4,12 @@ class OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.all.order('created_at DESC')
     @opinion = current_user.opinions.build
     
   end
 
-  def current_user
-    return unless session[:user_id]
-
-    @current_user ||= User.find_by_id(session[:user_id])
-  end
+  
 
   # GET /opinions/1
   # GET /opinions/1.json

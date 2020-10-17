@@ -1,6 +1,8 @@
 <div class='colum'>
  <div class='img-header mx-auto row'>
+  
   <div class='square'>
+    <img src="<%= current_user.photo %>" width='50'>
   </div>
   <p class='name ml-3'><%= current_user.fullname %></p>
  </div>
@@ -19,14 +21,15 @@
  </div>
  <nav class='nav-menu'>
     <ul>
-        <li><i class="fa fa-home" aria-hidden="true"></i> HOME</li>
+        <li><a href='/opinions' class='menu-anchor'><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
         <li>@ CONNECT</li>
         <li># DISCOVER</li>
-        <li><i class="fa fa-user" aria-hidden="true"></i> PROFILE</li>
+        <li><a href="/users/<%= current_user.id %>" class='menu-anchor'><i class="fa fa-user" aria-hidden="true"></i> PROFILE</a></li>
         <li><i class="fa fa-pie-chart" aria-hidden="true"></i> STATISTICS</li>
         <li><%= link_to 'Logout', logout_path,
-        data: { confimation: 'are you sure?' },
-        class: 'nav-link text-light'%></li>
+            data: { confimation: 'are you sure?' },
+            class: 'nav-link text-light'%>
+        </li>
     </ul>
  </nav>
 </div>

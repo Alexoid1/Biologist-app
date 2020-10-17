@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   def index
     @users = User.all
+
   end
 
   def new
@@ -9,6 +11,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @opinion = current_user.opinions.build
+    @opinions = current_user.opinions.order('created_at DESC')
    
   end
 
