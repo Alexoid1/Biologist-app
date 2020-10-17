@@ -1,11 +1,18 @@
 class OpinionsController < ApplicationController
   before_action :set_opinion, only: [:show, :edit, :update, :destroy]
-
+  include ApplicationHelper
   # GET /opinions
   # GET /opinions.json
   def index
     @opinions = Opinion.all
-    @opinion = Opinion.new
+    @opinion = current_user.opinions.build
+    
+  end
+
+  def current_user
+    return unless session[:user_id]
+
+    @current_user ||= User.find_by_id(session[:user_id])
   end
 
   # GET /opinions/1
@@ -30,7 +37,7 @@ class OpinionsController < ApplicationController
     respond_to do |format|
       if @opinion.save
         format.html { redirect_to opinions_path, notice: 'Opinion was successfully created.' }
-        
+        format.json { render :show, status: :created, location: @opinion }
       else
         format.html { render :new }
         format.json { render json: @opinion.errors, status: :unprocessable_entity }
@@ -61,9 +68,7 @@ class OpinionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def current_user
-    session[:author_id] && User.find(session[:author_id])
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

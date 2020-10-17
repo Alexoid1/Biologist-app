@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
       redirect_to new_session_path
       return
     end
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(params[:id])
     if @user
-      session[:author_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to opinions_path, notice: 'Logged in!'
     else
       flash.now.alert = 'Username is invalid'

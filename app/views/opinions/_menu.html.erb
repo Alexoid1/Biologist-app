@@ -2,7 +2,7 @@
  <div class='img-header mx-auto row'>
   <div class='square'>
   </div>
-  <p class='name ml-3'>ALEXOID ZAM</p>
+  <p class='name ml-3'><%= current_user.fullname %></p>
  </div>
  <div class='row follow'>
     <div class='text-center borders pt-3'>
@@ -24,6 +24,9 @@
         <li># DISCOVER</li>
         <li><i class="fa fa-user" aria-hidden="true"></i> PROFILE</li>
         <li><i class="fa fa-pie-chart" aria-hidden="true"></i> STATISTICS</li>
+        <li><%= link_to 'Logout', logout_path,
+        data: { confimation: 'are you sure?' },
+        class: 'nav-link text-light'%></li>
     </ul>
  </nav>
 </div>
