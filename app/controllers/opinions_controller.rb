@@ -15,7 +15,7 @@ class OpinionsController < ApplicationController
 
   # GET /opinions/new
   def new
-    @opinion = Opinion.new
+    @opinion = current_user.opinions.build
   end
 
   # GET /opinions/1/edit
@@ -25,7 +25,7 @@ class OpinionsController < ApplicationController
   # POST /opinions
   # POST /opinions.json
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinion = current_user.opinions.build(opinion_params)
 
     respond_to do |format|
       if @opinion.save
