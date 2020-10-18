@@ -1,3 +1,27 @@
-<div class='bg-danger col-4'>
-sdfsdf
+<div class='whoftitle'>
+  <div class='border-boto'>
+    <p class='ml-5 mt-3'>WHO TO FOLLOW <i class="fa fa-superpowers " aria-hidden="true"></i></p>
+    <hr>
+    <% @users.each do |user| %>
+      <div class='row'>
+        <a href="/users/<%= user.id %>">
+          <div class='circle my-3'>
+            <img src="<%= user.photo %>" width='50'>
+          </div>
+          <div class='box3'>
+
+          <p class='font-weight-bold'><%= user.fullname %></p>
+        </a>
+        </div>  
+        
+          
+          
+      </div>
+
+    <% end %>
+    <a href='#' class='font-link-who'>Popular accounts - Find friends</a>
+  </div>  
+  <hr>
+  <p class='ml-5 mt-3'>TRENDING <i class="fa fa-cog" aria-hidden="true"></i></p>
+    <hr>
 </div>

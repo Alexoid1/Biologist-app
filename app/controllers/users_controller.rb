@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @opinion = current_user.opinions.build
-    @opinions = current_user.opinions.order('created_at DESC')
+    @opinions = @user.opinions.order('created_at DESC')
    
   end
 

@@ -6,6 +6,7 @@ class OpinionsController < ApplicationController
   def index
     @opinions = Opinion.all.order('created_at DESC')
     @opinion = current_user.opinions.build
+    @users= User.where.not(id: current_user.id) unless current_user.nil?
     
   end
 

@@ -20,8 +20,18 @@
           </div>
         </div>
       </nav>
+      
       <div class='row'>
-        <%= render 'opinions/feed' %>
+        <div class='col-8 feed mx-auto'>
+          <div class='coverimg'>
+            <img src="<%= @user.coverimage %>">
+          </div>
+          
+          <%= render 'opinions/feed' %>
+        </div>
+        <div class='bg-danger col-4'> 
+          <%= render 'user_info' %>        
+        </div>  
        
       </div>
     </div>
@@ -43,27 +53,4 @@
   </div>
   
 </div>  
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @user.fullname %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
-
-<p>
-  <strong>Coverimage:</strong>
-  <%= @user.coverimage %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

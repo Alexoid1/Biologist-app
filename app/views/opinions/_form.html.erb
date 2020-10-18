@@ -2,7 +2,7 @@
   <%= form_for(@opinion) do |form| %>
     
     <%= form.label 'Share your opinion', class:'form-la' %>
-    <%= form.text_field :opinion, class: 'form-control', placeholder: 'Write here' %>
+    <%= form.text_area :opinion, class: 'form-control', placeholder: 'Write here' %>
     <%= display_errors(@opinion) %>
     <%= form.submit 'Save', class: 'btn btn-secondary buto' %>
   <% end %>

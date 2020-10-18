@@ -1,5 +1,5 @@
 
- <div class='col-8 feed mx-auto'>
+ 
   <%= render 'opinions/form' , opinion: @opinion  %>
 
 
@@ -14,11 +14,13 @@
             <img src="<%= opinion.user.photo %>" width='50'>
           </div>
           <div class='box2'>
-          
-          <p><%= opinion.opinion %></p>
-          
-          <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
+
+            <p class='font-weight-bold'><%= opinion.user.username %></p>
+            
+            <p><%= opinion.opinion %></p>
+            
+            <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
       </div> 
      <% end %>
   </div>
@@ -26,4 +28,3 @@
 
 
 
-</div>
