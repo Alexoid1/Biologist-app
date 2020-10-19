@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @opinion = current_user.opinions.build
     @opinions = @user.opinions.order('created_at DESC')
    
+   
   end
   
 
