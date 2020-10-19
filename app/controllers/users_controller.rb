@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @opinions = @user.opinions.order('created_at DESC')
    
   end
+  
 
   def create
     @user = User.new(user_params)

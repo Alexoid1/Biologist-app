@@ -6,12 +6,20 @@
 
   <p class='font-weight-bold titlename mt-2'><%= @user.fullname.upcase %></p>
   <p class='font-weight-bold text-center username-grey'>@<%= @user.username %></p>
+  <div class='text-center'>
+    <%= form_for current_user.followers.build(follower: @user) do |f| %>
+      <%= f.hidden_field :followed_id %>
+      <%= f.hidden_field :follower_id %>
+      <%= f.submit 'Follow', class:'follow-boton mb-4' %>
+    <% end %>  
+  
+  </div>  
 
   <table>
     
     <tr>
-      <th><p class='titlename mt-1 lineh'>546645</p><p class='text-center username-grey'>Opinions</p></th>
-      <th><p class='titlename mt-1 lineh'>789</p><p class='text-center username-grey'>Following</p></th>
+      <th><p class='titlename mt-1 lineh'><%= @user.opinions.count %></p><p class='text-center username-grey'>Opinions</p></th>
+      <th><p class='titlename mt-1 lineh'><%= @user.followers.count %></p><p class='text-center username-grey'>Following</p></th>
       <th><p class='titlename mt-1 lineh'>678</p><p class='text-center username-grey'>Followers</p></th>
     </tr>
 
