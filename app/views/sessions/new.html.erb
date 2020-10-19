@@ -1,7 +1,13 @@
 <h1 class='text-center'>Log In</h1>
 
 <%= bootstrap_form_with method: 'post', url: sessions_path, local: true do |form| %>
+      
     <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5 mb-5">
+        <ul>
+          <%@user.errors.full_messages.each do |error| %>
+          <li><%= error%></li>
+          <%end%>
+        </ul>
         <%= form.text_field :username, class: "text-black bg-light" %>
         <div class="actions d-block text-center"><%= form.submit 'Sign in' %></div>
     </div>

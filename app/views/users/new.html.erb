@@ -3,13 +3,13 @@
   <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5 mb-5">
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        
 
-        <ul>
-          <% user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+      <ul>
+        <%@user.errors.full_messages.each do |error| %>
+        <li><%= error%></li>
+        <%end%>
+      </ul>
       </div>
     <% end %>
 

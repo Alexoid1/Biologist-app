@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   include ApplicationHelper
   def index
     @users = User.all
+    
+
 
   end
 
@@ -13,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @opinion = current_user.opinions.build
     @opinions = @user.opinions.order('created_at DESC')
+    
    
    
   end
