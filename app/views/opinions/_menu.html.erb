@@ -25,10 +25,10 @@
         <li>@ CONNECT</li>
         <li># DISCOVER</li>
         <li><a href="/users/<%= current_user.id %>" class='menu-anchor'><i class="fa fa-user" aria-hidden="true"></i> PROFILE</a></li>
-        <li><i class="fa fa-pie-chart" aria-hidden="true"></i> STATISTICS</li>
-        <li><%= link_to 'Logout', logout_path,
+        <li><a href='/statics' class='menu-anchor'><i class="fa fa-pie-chart" aria-hidden="true"></i> STATISTICS</a></li>
+        <li><%= link_to 'LOGOUT', logout_path,
             data: { confimation: 'are you sure?' },
-            class: 'nav-link text-light'%>
+            class: 'menu-anchor'%>
         </li>
     </ul>
  </nav>
