@@ -56,7 +56,7 @@ body {
     .square {
       width:50px;
       height: 50px;
-      background: grey;
+      
       margin-left:25px;
       overflow: hidden;
     }
@@ -206,7 +206,7 @@ body {
       .circle2 {
         width: 130px;
         height: 130px;
-        background: grey;
+        
         margin:auto;
         border-radius:100%;
         overflow: hidden;
@@ -306,7 +306,7 @@ body {
     .square{
       width:50px;
       height: 50px;
-      background: grey;
+     
       margin-left:55px;
     }
 
@@ -321,5 +321,10 @@ body {
  
 
   
+}
+
+.menu-ancho{
+  color: rgb(85,105,126);
+
 }
 

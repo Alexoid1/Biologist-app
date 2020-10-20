@@ -10,12 +10,14 @@
      <hr>
      <% @opinions.each do |opinion| %>
         <div class='row'>
-          <div class='square'>
-            <img src="<%= opinion.user.photo %>" width='50'>
-          </div>
+          <a class='menu-ancho' href='users/<%= opinion.user.id %>'>
+            <div class='square'>
+              <img src="<%= opinion.user.photo %>" width='50'>
+            </div>
+          </a>
           <div class='box2'>
 
-            <p class='font-weight-bold'><%= opinion.user.username %></p>
+            <a class='menu-ancho' href='users/<%= opinion.user.id %>'><p class='font-weight-bold'><%= opinion.user.username %></p></a>
             
             <p><%= opinion.opinion %></p>
             

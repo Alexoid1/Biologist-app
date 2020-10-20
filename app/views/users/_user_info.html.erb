@@ -28,21 +28,23 @@
   <p class='text-left ml-4 mt-3 writee'>FOLLOWED BY</p>
   <hr>
   <% @user.follows.each do |follower| %>
-    <div class='row'>
-     
-      <div class='circle my-3'>
-        <img src="<%= follower.user.photo %>" width='50'>
-      </div>
-        
-      <div class='box3'>
+    <a href='/users/<%= follower.id %>'>
+      <div class='row'>
+      
+        <div class='circle my-3'>
+          <img src="<%= follower.user.photo %>" width='50'>
+        </div>
+          
+        <div class='box3'>
 
-        <p class='font-weight-bold'><%= follower.user.fullname %></p>
-      
-      </div>  
-      
+          <p class='font-weight-bold'><%= follower.user.fullname %></p>
         
+        </div>  
         
-    </div>
+          
+          
+      </div>
+    </a>  
 
   <% end %>
 </div>
