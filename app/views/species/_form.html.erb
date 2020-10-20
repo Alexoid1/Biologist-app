@@ -1,0 +1,48 @@
+
+
+  <%= bootstrap_form_for( @specie) do |form| %>
+    <div class="pt-2 shadow pb-5  col-10 mb-5">
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+  
+      <div class="field">
+        
+        <%= form.text_field :specie %>
+      </div>
+
+      <div class="field">
+      
+        <%= form.text_area :content %>
+      </div>
+
+      <div class="field">
+        
+        <%= form.text_field :image %>
+      </div>
+
+      <div class="field">
+        
+        <%= form.text_field :location %>
+      </div>
+
+      <div class="field">
+      
+        <%= form.date_field :date %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>  
+
+  <% end %>

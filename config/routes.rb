@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  
   root "sessions#new"
-  resources :sessions
+
   resources :opinions
   resources :followings
   resources :users
+  resources :sessions
+  resources :species
+  
+
   
   
   get 'signup', to: 'users#new', as: 'signup'

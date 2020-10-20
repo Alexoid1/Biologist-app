@@ -4,7 +4,7 @@
       
     <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5 mb-5">
         <ul>
-          <%@user.errors.full_messages.each do |error| %>
+          <% @user.errors.full_messages.each do |error| %>
           <li><%= error%></li>
           <%end%>
         </ul>
@@ -14,5 +14,5 @@
 <% end %>
 
 <div class='text-center'>
-  <%= link_to 'Sign up', root_path, class: 'nav-link text-primary' %>
+  <%= link_to 'Sign up', new_user_path, class: 'nav-link text-primary' %>
 </div>
