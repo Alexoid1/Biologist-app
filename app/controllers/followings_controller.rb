@@ -6,10 +6,8 @@ class FollowingsController < ApplicationController
 
   def create
     @following = current_user.followers.create!(following_params)
-    
-    
+
     redirect_back(fallback_location: root_path)
-   
   end
 
   def destroy

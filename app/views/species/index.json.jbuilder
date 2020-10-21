@@ -1,1 +1,1 @@
-json.array! @species, partial: "species/specie", as: :specie
+json.array! @species, partial: 'species/specie', as: :specie

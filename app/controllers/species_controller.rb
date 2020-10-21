@@ -1,48 +1,38 @@
 class SpeciesController < ApplicationController
-  before_action :set_species, only: [:show, :edit, :update, :destroy]
+  before_action :set_species, only: %i[show edit update destroy]
   include ApplicationHelper
   # GET /species
   # GET /species.json
   def index
-    @species = Specie.all
-    @not_followers =  User.not_follow(current_user)
-    @users= @not_followers.where.not(id: current_user.id).order('created_at DESC') unless current_user.nil?
-    
+    @species = Species.all
+    @not_followers = User.not_follow(current_user)
+    @users = @not_followers.where.not(id: current_user.id).order('created_at DESC') unless current_user.nil?
   end
 
   def new
-    @species = Specie.all
-    @not_followers =  User.not_follow(current_user)
-    @users= @not_followers.where.not(id: current_user.id).order('created_at DESC') unless current_user.nil?
-    
+    @species = Species.all
+    @not_followers = User.not_follow(current_user)
+    @users = @not_followers.where.not(id: current_user.id).order('created_at DESC') unless current_user.nil?
+
     @specie = current_user.species.build
     @user = current_user
   end
 
   # GET /species/1
   # GET /species/1.json
-  def show
-  end
+  def show; end
 
   # GET /species/new
- 
 
   # GET /species/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /species
   # POST /species.json
   def create
     @species = current_user.species.build(species_params)
 
-    
-      if @species.save
-        redirect_to species_index_url, notice: 'Specie post created!'
-      else
-        
-      end
-    
+    redirect_to species_index_url, notice: 'Specie post created!' if @species.save
   end
 
   # PATCH/PUT /species/1
@@ -70,13 +60,14 @@ class SpeciesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_species
-      @species = Specie.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def species_params
-      params.require(:species).permit(:specie, :content, :image, :location, :date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_species
+    @species = Specie.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def species_params
+    params.require(:species).permit(:specie, :content, :image, :location, :date)
+  end
 end

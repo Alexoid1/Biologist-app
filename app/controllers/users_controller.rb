@@ -2,9 +2,6 @@ class UsersController < ApplicationController
   include ApplicationHelper
   def index
     @users = User.all
-    
-
-
   end
 
   def new
@@ -15,11 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @opinion = current_user.opinions.build
     @opinions = @user.opinions.order('created_at DESC')
-    
-   
-   
   end
-  
 
   def create
     @user = User.new(user_params)
@@ -31,9 +24,7 @@ class UsersController < ApplicationController
     end
   end
 
- 
-
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:fullname, :username, :photo, :coverimage)
   end

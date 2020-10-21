@@ -12,6 +12,4 @@ module ApplicationHelper
       content_tag(:p, flash[:alert], class: 'alert alert-danger')
     end
   end
-
-  
 end
