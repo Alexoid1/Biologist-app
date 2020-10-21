@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user_2) { User.create(username: 'Rebecca Y', fullname: 'recca@opal.com') }
+  let(:user_3) { User.create(username: 'Rebecca ryrty', fullname: 'reccafghjfgopal.com') }
   subject { User.create(username: 'Abd A', fullname: 'a.aziz@opal.com') }
 
   before do
@@ -22,4 +23,6 @@ RSpec.describe User, type: :model do
     it { expect(subject).to have_many(:follows) }
     it { expect(subject).to have_many(:species) }
   end
+
+
 end

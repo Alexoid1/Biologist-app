@@ -4,7 +4,7 @@ RSpec.feature 'Species', type: :feature do
   scenario 'Create species article' do
     visit('/species/new')
     fill_in 'specie name', with: 'Leiurus quinquestriatus'
-    fill_in 'Say something', with: 'look at this little friend that I find in my boots'
+    fill_in 'Say something', with: 'look at this little friend that I find in my shoes'
     fill_in 'Write the url of the images(http://www.imageexmaple.com)',
             with: 'https://vignette.wikia.nocookie.net/arachnipedia/images/e/e7/Deathstalker-scorpion-from-the-front-2gxktzj.jpg/revision/latest/scale-to-width-down/340?cb=20130327075633'
     fill_in 'Where this happen', with: 'Pakistan-sijh'
