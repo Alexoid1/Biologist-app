@@ -17,7 +17,11 @@ class SpeciesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create species' do
     assert_difference('Specie.count') do
-      post species_url, params: { species: { content: @species.content, date: @species.date, image: @species.image, location: @species.location, specie: @species.specie } }
+      post species_url, params: { species: { content: @species.content,
+                                             date: @species.date,
+                                             image: @species.image,
+                                             location: @species.location,
+                                             specie: @species.specie } }
     end
 
     assert_redirected_to species_url(Specie.last)
@@ -34,7 +38,11 @@ class SpeciesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update species' do
-    patch species_url(@species), params: { species: { content: @species.content, date: @species.date, image: @species.image, location: @species.location, specie: @species.specie } }
+    patch species_url(@species),
+          params: { species: { content: @species.content,
+                               date: @species.date, image: @species.image,
+                               location: @species.location,
+                               specie: @species.specie } }
     assert_redirected_to species_url(@species)
   end
 
