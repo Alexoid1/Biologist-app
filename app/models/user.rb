@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :follows, foreign_key: 'followed_id', class_name: 'Following'
   has_many :species
 
-  scope :not_follow, ->(user) { where.not(id: (user.followers).map(&:followed_id)) }
+  scope :not_follow, ->(user) { where.not(id: user.followers.map(&:followed_id)) }
 end
