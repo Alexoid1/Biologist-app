@@ -6,13 +6,17 @@
 
   <p class='font-weight-bold titlename mt-2'><%= @user.fullname.upcase %></p>
   <p class='font-weight-bold text-center username-grey'>@<%= @user.username %></p>
-  <div class='text-center'>
-    <%= form_for current_user.followers.build(follower: @user) do |f| %>
-      <%= f.hidden_field :followed_id %>
-      <%= f.hidden_field :follower_id %>
-      <%= f.submit 'Follow', class:'follow-boton mb-4' %>
-    <% end %>  
   
+  <div class='text-center'>
+    <% if current_user.followers.find_by(followed_id:@user.id) %>
+      
+    <% else %>
+      <%= form_for current_user.followers.build(follower: @user) do |f| %>
+        <%= f.hidden_field :followed_id %>
+        <%= f.hidden_field :follower_id %>
+        <%= f.submit 'Follow', class:'follow-boton mb-4' %>
+      <% end %>  
+    <% end %>    
   </div>  
 
   <table>
