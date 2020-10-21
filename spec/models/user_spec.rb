@@ -23,6 +23,4 @@ RSpec.describe User, type: :model do
     it { expect(subject).to have_many(:follows) }
     it { expect(subject).to have_many(:species) }
   end
-
-
 end
