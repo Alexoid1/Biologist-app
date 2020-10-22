@@ -21,8 +21,8 @@ RSpec.configure do |config|
     @user.followers.build(followedid: @user2.id).save
     @user3.followers.build(followedid: @user4.id).save
 
-    Opinion.create(user_id: @user.id, opinion: 'I am the world! yeahhh')
-    Opinion.create(user_id: @user.id, opinion: 'I am the world! 2')
+    Opinion.create(authorid: @user.id, opinion: 'I am the world! yeahhh')
+    Opinion.create(authorid: @user.id, opinion: 'I am the world! 2')
   end
 
   def login()

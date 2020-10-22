@@ -4,8 +4,8 @@ RSpec.describe Opinion, type: :model do
   let(:user) { User.create(fullname: 'Rebecca Y', username: 'Rebecayy') }
 
   before do
-    Opinion.create(user_id: user.id, opinion: 'I am the world!')
-    Opinion.create(user_id: user.id, opinion: 'Here I am')
+    Opinion.create(authorid: user.id, opinion: 'I am the world!')
+    Opinion.create(authorid: user.id, opinion: 'Here I am')
   end
 
   context 'Validations' do

@@ -15,9 +15,7 @@ class OpinionsController < ApplicationController
   # GET /opinions/1.json
   def show; end
 
-  def current_user
-    session[:user_id] && User.find(session[:user_id])
-  end
+
 
   # GET /opinions/new
   def new

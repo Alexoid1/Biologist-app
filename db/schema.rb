@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_071644) do
     t.text "opinion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.integer "authorid"
   end
 
   create_table "species", force: :cascade do |t|
