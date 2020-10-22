@@ -14,10 +14,7 @@ class FollowingsController < ApplicationController
     following = Following.find(params[:id])
     following.destroy
 
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.json { head :no_content }
-    end
+    redirect_back(fallback_location: root_path)
   end
 
   def following_params

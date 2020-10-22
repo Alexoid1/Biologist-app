@@ -38,14 +38,12 @@ class SpeciesController < ApplicationController
   # PATCH/PUT /species/1
   # PATCH/PUT /species/1.json
   def update
-    respond_to do |format|
-      if @species.update(species_params)
-        format.html { redirect_to species_path, notice: 'Specie was successfully updated.' }
-        format.json { render :show, status: :ok, location: @species }
-      else
-        format.html { render :edit }
-        format.json { render json: @species.errors, status: :unprocessable_entity }
-      end
+    if @species.update(species_params)
+      redirect_to species_path, notice: 'Specie was successfully updated.'
+
+    else
+      render :edit
+
     end
   end
 
@@ -53,10 +51,8 @@ class SpeciesController < ApplicationController
   # DELETE /species/1.json
   def destroy
     @species.destroy
-    respond_to do |format|
-      format.html { redirect_to species_url, notice: 'Specie was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to species_url, notice: 'Specie was successfully destroyed.'
   end
 
   private

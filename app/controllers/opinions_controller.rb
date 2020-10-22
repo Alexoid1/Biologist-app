@@ -32,28 +32,24 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinion_params)
 
-    respond_to do |format|
-      if @opinion.save
-        format.html { redirect_to opinions_path, notice: 'Opinion was successfully created.' }
-        format.json { render :show, status: :created, location: @opinion }
-      else
-        format.html { render :new }
-        format.json { render json: @opinion.errors, status: :unprocessable_entity }
-      end
+    if @opinion.save
+      redirect_to opinions_path, notice: 'Opinion was successfully created.'
+
+    else
+      render :index
+
     end
   end
 
   # PATCH/PUT /opinions/1
   # PATCH/PUT /opinions/1.json
   def update
-    respond_to do |format|
-      if @opinion.update(opinion_params)
-        format.html { redirect_to @opinion, notice: 'Opinion was successfully updated.' }
-        format.json { render :show, status: :ok, location: @opinion }
-      else
-        format.html { render :edit }
-        format.json { render json: @opinion.errors, status: :unprocessable_entity }
-      end
+    if @opinion.update(opinion_params)
+      redirect_to @opinion, notice: 'Opinion was successfully updated.'
+
+    else
+      render :edit
+
     end
   end
 
@@ -61,10 +57,8 @@ class OpinionsController < ApplicationController
   # DELETE /opinions/1.json
   def destroy
     @opinion.destroy
-    respond_to do |format|
-      format.html { redirect_to opinions_url, notice: 'Opinion was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to opinions_url, notice: 'Opinion was successfully destroyed.'
   end
 
   private
