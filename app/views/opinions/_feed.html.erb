@@ -16,12 +16,13 @@
             </div>
           </a>
           <div class='box2'>
+           <%= destroy_opinion(opinion,current_user) %>
+            
 
             <a class='menu-ancho' href='users/<%= opinion.user.id %>'><p class='font-weight-bold'><%= opinion.user.username %></p></a>
             
             <p><%= opinion.opinion %></p>
             
-            <p><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></p>
           </div>
       </div> 
      <% end %>
