@@ -18,8 +18,8 @@ RSpec.configure do |config|
                          photo: 'https://www.hola.com/imagenes/belleza/tendencias/2017092099476/cortes-de-pelo-estilo-middleton/0-488-558/elsa_hosk_m-m.jpg',
                          coverimage: 'https://www.ctvnews.ca/polopoly_fs/1.5063738.1597360423!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg')
 
-    @user.followers.build(followed_id: @user2.id).save
-    @user3.followers.build(followed_id: @user4.id).save
+    @user.followers.build(followedid: @user2.id).save
+    @user3.followers.build(followedid: @user4.id).save
 
     Opinion.create(user_id: @user.id, opinion: 'I am the world! yeahhh')
     Opinion.create(user_id: @user.id, opinion: 'I am the world! 2')

@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2020_10_20_071644) do
   enable_extension "plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
+    t.integer "followerid"
+    t.integer "followedid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_id"], name: "index_followings_on_followed_id"
-    t.index ["follower_id"], name: "index_followings_on_follower_id"
+    t.index ["followedid"], name: "index_followings_on_followedid"
+    t.index ["followerid"], name: "index_followings_on_followerid"
   end
 
   create_table "opinions", force: :cascade do |t|

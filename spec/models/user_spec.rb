@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   subject { User.create(username: 'Abd A', fullname: 'a.aziz@opal.com') }
 
   before do
-    Following.create(follower_id: subject.id, followed_id: user_2.id)
+    Following.create(followerid: subject.id, followedid: user_2.id)
   end
 
   context 'Validations' do

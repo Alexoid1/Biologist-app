@@ -4,9 +4,9 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   has_many :opinions
   has_many :followings
-  has_many :followers, foreign_key: 'follower_id', class_name: 'Following'
-  has_many :follows, foreign_key: 'followed_id', class_name: 'Following'
+  has_many :followers, foreign_key: 'followerid', class_name: 'Following'
+  has_many :follows, foreign_key: 'followedid', class_name: 'Following'
   has_many :species
 
-  scope :not_follow, ->(user) { where.not(id: user.followers.map(&:followed_id)) }
+  scope :not_follow, ->(user) { where.not(id: user.followers.map(&:followedid)) }
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :opinions
   resources :followings, only: [:new, :create, :index,:destroy]
   resources :users
-  resources :sessions, only: [:new,:create,:destroy]
+  resources :sessions, only: [:new, :index, :create,:destroy]
   resources :species
   
 

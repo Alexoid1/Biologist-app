@@ -21,6 +21,6 @@ class FollowingsController < ApplicationController
   end
 
   def following_params
-    params.require(:following).permit(:followed_id)
+    params.require(:following).permit(:followedid)
   end
 end
