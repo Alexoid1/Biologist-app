@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[edit update destroy]
   include ApplicationHelper
   def index
     @users = User.all
@@ -25,6 +26,9 @@ class UsersController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
+  def set_user
+    @user = User.find(params[:id])
+  end  
   def user_params
     params.require(:user).permit(:fullname, :username, :photo, :coverimage)
   end

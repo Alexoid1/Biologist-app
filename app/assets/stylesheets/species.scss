@@ -1,3 +1,23 @@
 // Place all the styles related to the Species controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.box4 {
+  color: rgb(27, 44, 63);
+  font-size: 14px;
+  margin: 20px 17px 0;
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+
+  .username-grey {
+    color: rgb(183, 184, 186);
+    font-size: 14px;
+  }
+
+  .square2 {
+    height: 300px;
+    width: 100%;
+    border: 1px solid rgb(212, 208, 208);
+    overflow: hidden;
+  }
+}
