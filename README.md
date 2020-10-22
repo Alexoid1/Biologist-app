@@ -48,7 +48,7 @@
 
 ## Live Version
 
-[Live Demo Link](https://biologist-appp.herokuapp.com/)
+[Live Demo Link](https://biologistt-app.herokuapp.com/)
 
 ## Video
 
