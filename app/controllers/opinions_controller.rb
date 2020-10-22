@@ -15,8 +15,6 @@ class OpinionsController < ApplicationController
   # GET /opinions/1.json
   def show; end
 
-
-
   # GET /opinions/new
   def new
     @opinion = current_user.opinions.build

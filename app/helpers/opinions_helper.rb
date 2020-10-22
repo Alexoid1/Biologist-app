@@ -6,7 +6,7 @@ module OpinionsHelper
   end
 
   def destroy_opinion(opinion, current_user)
-    return unless opinion.authorid== current_user.id
+    return unless opinion.authorid == current_user.id
 
     content_tag(:p, class: 'float-right') do
       link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' }
