@@ -53,7 +53,7 @@
 
 ## Video
 
-[Video Link](https://www.youtube.com/watch?v=0Uoi7ZlhYt8)
+[Video Link]()
 
 ## Credit
 
