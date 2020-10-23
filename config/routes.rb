@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   
   root "sessions#new"
 
-  resources :opinions
+  resources :opinions, only: [:new, :index, :create, :show, :destroy]
   resources :followings, only: [:new, :create, :index,:destroy]
-  resources :users
+  resources :users , only: [:new, :index, :create,:show]
   resources :sessions, only: [:new, :index, :create,:destroy]
-  resources :species
+  resources :species, only: [:new, :index, :create]
   
 
   get 'login', to: 'sessions#new', as: 'login'

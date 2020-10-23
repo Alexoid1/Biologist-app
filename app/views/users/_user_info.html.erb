@@ -8,7 +8,7 @@
   <p class='font-weight-bold text-center username-grey'>@<%= @user.username %></p>
   
   <div class='text-center'>
-    <% if current_user.followers.find_by(followedid:@user.id) %>
+    <% if current_user.followers.find_by(followedid:@user.id) || current_user.id == @user.id %>
       
     <% else %>
       <%= form_for current_user.followers.build(follower: @user) do |f| %>
