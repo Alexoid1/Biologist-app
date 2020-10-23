@@ -1,0 +1,39 @@
+<%= bootstrap_form_for( @user) do |form| %>
+  <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5 mb-5">
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+          <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+     
+      <%= form.text_field :fullname %>
+    </div>
+
+    <div class="field">
+     
+      <%= form.text_field :username %>
+    </div>
+
+    <div class="field">
+      
+      <%= form.text_field :photo %>
+    </div>
+
+    <div class="field">
+      
+      <%= form.text_field :coverimage %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>  
+<% end %>

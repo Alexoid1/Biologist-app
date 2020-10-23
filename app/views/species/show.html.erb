@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Specie:</strong>
+  <%= @species.specie %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @species.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @species.image %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @species.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @species.date %>
+</p>
+
+<%= link_to 'Edit', edit_species_path(@species) %> |
+<%= link_to 'Back', species_path %>

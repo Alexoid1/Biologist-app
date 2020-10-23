@@ -1,0 +1,305 @@
+// Place all the styles related to the Opinions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/scss/bootstrap";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  max-width: 1700px;
+  min-width: 1500px;
+  background: rgb(245, 246, 248);
+}
+
+.colum {
+  width: 260px;
+  background: rgb(33, 50, 70);
+  position: fixed;
+  height: 100vh;
+  z-index: 2;
+
+  .nav-menu ul {
+    list-style: none;
+  }
+
+  .nav-menu ul li {
+    margin: 30px 0 0 40px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(85, 105, 126);
+
+    .menu-anchor {
+      color: rgb(85, 105, 126);
+    }
+
+    .menu-anchor:hover {
+      color: white;
+    }
+  }
+
+  .nav-menu ul li:hover {
+    color: white;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(85, 105, 126);
+    line-height: 50px;
+  }
+
+  .img-header {
+    padding: 20px;
+    background: rgb(27, 44, 63);
+
+    .square {
+      width: 50px;
+      height: 50px;
+      margin-left: 25px;
+      overflow: hidden;
+    }
+  }
+
+  .follow {
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .borders {
+    border: 1px solid rgb(39, 56, 48);
+    width: 50%;
+    background: rgb(27, 44, 63);
+  }
+
+  .number {
+    font-weight: bold;
+    font-size: 23px;
+    color: rgb(106, 130, 157);
+  }
+
+  .fol {
+    font-size: 18px;
+    color: rgb(85, 105, 126);
+  }
+}
+
+.navl {
+  height: 70px;
+  background: rgb(81, 165, 227);
+  color: white;
+}
+
+.marginLeft {
+  margin-left: 260px;
+  width: 80%;
+  max-width: 1700px;
+  font-size: 25px;
+
+  .box3 {
+    color: rgb(27, 44, 63);
+    font-size: 14px;
+    margin: 20px 17px 0;
+  }
+
+  .wid {
+    width: 100%;
+    margin-right: 3%;
+
+    .linkNav {
+      color: rgb(51, 108, 149);
+      margin-right: 35px;
+    }
+
+    .linkNav:hover {
+      color: white;
+    }
+
+    .coverimg {
+      width: 100%;
+      height: 288px;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 1px solid rgb(212, 208, 208);
+    }
+
+    .coverimg img {
+      width: 100%;
+    }
+
+    .box4 {
+      color: rgb(27, 44, 63);
+      font-size: 14px;
+      margin: 20px 17px 0;
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+
+      .username-grey {
+        color: rgb(183, 184, 186);
+        font-size: 14px;
+      }
+
+      .square2 {
+        height: 300px;
+        width: 100%;
+        border: 1px solid rgb(212, 208, 208);
+        overflow: hidden;
+      }
+    }
+
+    .col-4,
+    .col-8 {
+      padding: 0;
+    }
+
+    .whof {
+      border-left: 1px solid rgb(212, 208, 208);
+      background: rgb(245, 246, 248);
+
+      .follow-boton {
+        background: rgb(27, 44, 63);
+        color: white;
+        font-size: 17px;
+      }
+
+      th {
+        border: 1px solid rgb(212, 208, 208);
+      }
+
+      table {
+        width: 100%;
+
+        .lineh {
+          margin-bottom: -3px;
+        }
+      }
+
+      .writee {
+        color: rgb(183, 184, 186);
+        font-size: 18px;
+        margin-left: 37px;
+      }
+
+      .circle {
+        width: 50px;
+        height: 50px;
+        background: grey;
+        margin-left: 65px;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+
+      .box3 {
+        color: rgb(27, 44, 63);
+        font-size: 14px;
+        margin: 20px 17px 0;
+      }
+
+      .circle2 {
+        width: 130px;
+        height: 130px;
+        margin: auto;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+
+      .titlename {
+        color: rgb(27, 44, 63);
+        text-align: center;
+        font-size: 17px;
+      }
+
+      .username-grey {
+        color: rgb(183, 184, 186);
+        font-size: 14px;
+      }
+
+      .whoftitle {
+        color: rgb(183, 184, 186);
+        font-size: 18px;
+
+        .circle {
+          width: 50px;
+          height: 50px;
+          background: grey;
+          margin-left: 65px;
+          border-radius: 100%;
+          overflow: hidden;
+        }
+
+        .box3 {
+          color: rgb(27, 44, 63);
+          font-size: 14px;
+          margin: 20px 17px 0;
+        }
+
+        .font-link-who {
+          font-size: 12px;
+          margin: 20px 60px 0;
+        }
+      }
+    }
+  }
+}
+
+.feed {
+  padding-left: 17px;
+  height: 100%;
+
+  .box {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+
+    .form-la {
+      color: rgb(183, 184, 186);
+      font-size: 18px;
+      margin-left: 37px;
+    }
+
+    .form-control {
+      width: 90%;
+      margin: auto;
+    }
+
+    .buto {
+      margin: 20px 37px;
+    }
+
+    .box2 {
+      color: rgb(27, 44, 63);
+      font-size: 14px;
+      margin-left: 17px;
+      width: 80%;
+    }
+
+    .box2 p {
+      line-height: 18px;
+      text-align: left;
+      word-break: break-all;
+    }
+
+    .n-posts {
+      color: rgb(81, 165, 227);
+      font-size: 18px;
+      margin-left: 37px;
+    }
+
+    .square {
+      width: 50px;
+      height: 50px;
+      margin-left: 55px;
+    }
+  }
+}
+
+.menu-ancho {
+  color: rgb(85, 105, 126);
+}

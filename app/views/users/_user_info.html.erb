@@ -1,0 +1,54 @@
+<div class=''>
+  <div class='circle2 mt-2'>
+    <img src="<%= @user.photo %>" width='130'>
+  </div>
+  
+
+  <p class='font-weight-bold titlename mt-2'><%= @user.fullname.upcase %></p>
+  <p class='font-weight-bold text-center username-grey'>@<%= @user.username %></p>
+  
+  <div class='text-center'>
+    <% if current_user.followers.find_by(followedid:@user.id) || current_user.id == @user.id %>
+      
+    <% else %>
+      <%= form_for current_user.followers.build(follower: @user) do |f| %>
+        <%= f.hidden_field :followedid %>
+        <%= f.hidden_field :followerid %>
+        <%= f.submit 'Follow', class:'follow-boton mb-4' %>
+      <% end %>  
+    <% end %>    
+  </div>  
+
+  <table>
+    
+    <tr>
+      <th><p class='titlename mt-1 lineh'><%= @user.opinions.count %></p><p class='text-center username-grey'>Opinions</p></th>
+      <th><p class='titlename mt-1 lineh'><%= @user.followers.count %></p><p class='text-center username-grey'>Following</p></th>
+      <th><p class='titlename mt-1 lineh'><%= @user.follows.count %></p><p class='text-center username-grey'>Followers</p></th>
+    </tr>
+
+  </table>
+  
+  <p class='text-left ml-4 mt-3 writee'>FOLLOWED BY</p>
+  <hr>
+  <% @user.follows.includes(:user).each do |follower| %>
+    <a href='/users/<%= follower.id %>'>
+      <div class='row'>
+      
+        <div class='circle my-3'>
+          <img src="<%= follower.user.photo %>" width='50'>
+        </div>
+          
+        <div class='box3'>
+
+          <p class='font-weight-bold'><%= follower.user.fullname %></p>
+        
+        </div>  
+        
+          
+          
+      </div>
+    </a>  
+
+  <% end %>
+</div>

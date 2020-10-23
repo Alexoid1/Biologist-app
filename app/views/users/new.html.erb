@@ -1,0 +1,45 @@
+<h1 class='text-center'>Sign up</h1>
+<%= bootstrap_form_for( @user) do |form| %>
+  <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5 mb-5">
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        
+
+      <ul>
+        <%@user.errors.full_messages.each do |error| %>
+        <li><%= error%></li>
+        <%end%>
+      </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+     
+      <%= form.text_field :fullname, placeholder:'fullname here' %>
+    </div>
+
+    <div class="field">
+     
+      <%= form.text_field :username, placeholder:'user name here' %>
+    </div>
+
+    <div class="field">
+      
+      <%= form.text_field :photo, placeholder:'http://www.imageexmaple.com (size 100x100)' %>
+    </div>
+
+    <div class="field">
+      
+      <%= form.text_field :coverimage, placeholder:'http://www.imageexmaple.com (size 900x350)' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>  
+<% end %>
+
+
+<div class='text-center'>
+  <%= link_to 'Sign in', login_path, class: 'nav-link text-primary' %>
+</div>

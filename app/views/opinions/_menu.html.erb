@@ -1,0 +1,35 @@
+<div class='colum'>
+ <div class='img-header mx-auto row'>
+  
+  <div class='square'>
+    <img src="<%= current_user.photo %>" width='50'>
+  </div>
+  <p class='name ml-3'><%= current_user.fullname.upcase %></p>
+ </div>
+ <div class='row follow'>
+    <div class='text-center borders pt-3'>
+        <p class='number'><%= current_user.followers.count %></p>
+        <p class='fol'>Following</p>
+    </div>
+    
+    <div class='text-center borders pt-3'>
+        <p class='number'><%= current_user.follows.count %></p>
+        <p class='fol'>Followers</p>
+    </div>
+ </div>
+ <div>
+ </div>
+ <nav class='nav-menu'>
+    <ul>
+        <li><a href='/opinions' class='menu-anchor'><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
+        <li>@ CONNECT</li>
+        <li><a href='/species' class='menu-anchor'># SPECIES SIGHTINGS</a></li>
+        <li><a href="/users/<%= current_user.id %>" class='menu-anchor'><i class="fa fa-user" aria-hidden="true"></i> PROFILE</a></li>
+        <li><a href='/statics' class='menu-anchor'><i class="fa fa-pie-chart" aria-hidden="true"></i> STATISTICS</a></li>
+        <li><i class="fa fa-power-off menu-anchor" aria-hidden="true"><%= link_to ' LOGOUT', logout_path,
+            data: { confimation: 'are you sure?' },
+            class: 'menu-anchor'%></i>
+        </li>
+    </ul>
+ </nav>
+</div>

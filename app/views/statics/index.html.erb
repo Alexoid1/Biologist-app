@@ -1,0 +1,43 @@
+<div class='row index'>
+  <div>
+    <%= render 'opinions/menu' %>
+  </div>
+  
+  <div class='marginLeft row'>
+    <div class='wid'>
+      <nav class="navbar navbar-expand-lg navl  navbar-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse justify-content-end mr-5" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active " href="#"><i class="fa fa-pencil linkNav" aria-hidden="true"></i></a>
+            <a class="nav-link text-light" href="#"><i class="fa fa-envelope-o linkNav" aria-hidden="true"></i></a>
+            <a class="nav-link text-light" href="#"><i class="fa fa-search linkNav" aria-hidden="true"></i></a>
+            <a class="nav-link text-light" href="#"><i class="fa fa-cog  linkNav" aria-hidden="true"></i></a>
+            
+          </div>
+        </div>
+      </nav>
+      <div class='row'>
+        <div class='col-8 feed mx-auto'>
+          <div class='col-10 mx-auto box3'>
+            <p class='font-weight-bold'>Opinions group by hour of day</p>
+            <%= line_chart current_user.opinions.group_by_hour_of_day(:created_at).count %>
+          </div>
+          <div class='col-10 mx-auto box3'>
+            <p class='font-weight-bold'>Opinions group by day of week</p>
+            <%= column_chart current_user.opinions.group_by_day_of_week(:created_at, format: "%a").count %>
+          </div>
+        
+        </div> 
+        <div class='whof col-4'> 
+          <%= render 'opinions/who_follow' %>
+        </div>  
+      </div>
+    </div>
+        
+  </div>
+  
+</div>
