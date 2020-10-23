@@ -23,6 +23,7 @@
 - Browser
 - Internet
 - Postgresql Install
+- Yarn Install
 - Ruby Install
 - Rails Install
 
