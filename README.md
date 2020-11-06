@@ -1,6 +1,6 @@
 # Biologist app (Capstone project Rails)
 
-> The main goal is create a Social media website. It's a real-world-like project, built with business specifications is based on a redesign of Twitter. You should follow the given design of the website, but you must personalize the content.
+> This is a social-media where the user can share the species sightings with other users, follow other users, and track his activity daily and weekly.
 
 ## Index
 
